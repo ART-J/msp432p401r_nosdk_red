@@ -4,7 +4,9 @@ The code for msp432p401r (red board / nosdk)
 V1.3
 
 1.语句：“SCB->SCR |= SCB_SCR_SLEEPONEXIT_Msk; ”和 “__sleep();”的区别
+	
 	1）SCB->SCR |= SCB_SCR_SLEEPONEXIT_Msk  功能：使能进入中断唤醒休眠
+
 	2）__sleep();即 __wfi()                  功能：使能停止模式   ：CPU停止于当前位置，等待退出停止模式
 		 
 		这些指令皆为ARM指令集函数。
@@ -35,7 +37,7 @@ V1.4
 	原文：https://blog.csdn.net/wang2425559/article/details/77895047 
 
 2.改变程序结构：
-
+	
 	1）加入看门狗定时器 每250ms中断一次，4次后（达到1s时）唤醒MCU开启ADC转换 进行8次采样
 	
 	2）加入mylib.h 引用所有自定义的H文件，并将休眠模式
