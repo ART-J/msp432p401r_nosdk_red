@@ -28,11 +28,11 @@
  * SCK      OUT     P3.1    * SCK      OUT     P1.5      * SCK      OUT     P10.1      * SCK      OUT     P4.3
  * ----------------------   * ----------------------     * ---------------------      * ---------------------
 
- * -----USCI_A1_UART---------
- * PORT     TYPE    PIN
- * RXD      INOUT   P3.2
- * TXD      OUT     P3.3
- * -------------------------
+ * -----USCI_A1_UART------  * -----USCI_A0_UART------
+ * PORT     TYPE    PIN     * PORT     TYPE    PIN
+ * RXD      INOUT   P3.2    * RXD      INOUT   P1.2
+ * TXD      OUT     P3.3    * TXD      OUT     P1.3
+ * -----------------------  * -----------------------
  */
 //******************************************************************************
 
@@ -47,12 +47,12 @@ int main(void)
     //user_init();
     LMP3;
     while (1) {
-    	if(systik_flag==1)
-    	{
-    			user_loop();
-    			systik_flag=0;
-    	}
-    	LMP3;
+    if(systik_flag==1)
+    {
+        user_loop();
+        systik_flag=0;
+    }
+    LMP3;
     }
 }
 

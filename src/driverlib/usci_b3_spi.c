@@ -70,13 +70,13 @@ void usci_b3_spi_init(void)
     UCB3CTLW0 |= UCSWRST;                     // **Put state machine in reset**
 	UCB3CTLW0 |= UCMST|UCSYNC|UCCKPL|UCMSB;   // 3-pin, 8-bit SPI master
 											  // Clock polarity high, MSB
-	UCB3CTLW0 |= UCSSEL__SMCLK;                // ACLK
+	UCB3CTLW0 |= UCSSEL__SMCLK;                // SMCLK
 	UCB3BR0 = 7;                           // /2,fBitClock = fBRCLK/(UCBRx+1).
 	UCB3BR1 = 0;                              //
 	//UCA3MCTLW = 0;                            // No modulation
 	UCB3CTLW0 &= ~UCSWRST;                    // **Initialize USCI state machine**
     UCB3IFG  &=~(UCTXIFG + UCRXIFG);
-    SCB->SCR &= ~SCB_SCR_SLEEPONEXIT_Msk;   // Wake up on exit from ISR
+   // SCB->SCR &= ~SCB_SCR_SLEEPONEXIT_Msk;   // Wake up on exit from ISR
 }
 inline void usci_b3_spi_rx_isr_handle(void)
 {

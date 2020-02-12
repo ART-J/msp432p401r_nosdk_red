@@ -15,6 +15,8 @@ void display(void)
 {
     static int i=0;
 
+    while(!(UCA0IFG & UCTXIFG));
+           UCA0TXBUF = ADCvalue;                   // Load data onto buffer
     //ssd1351_show_rainbow();                                       //彩虹刷屏
     //ssd1351_display_string(46, 72, "+", FONT_1608, Blue, Black);  //加号
 /*单通道ADC*/

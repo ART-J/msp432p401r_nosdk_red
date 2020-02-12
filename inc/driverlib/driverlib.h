@@ -12,9 +12,12 @@
 
 #include <inc/driverlib/ADC14.h>
 #include <inc/driverlib/usci_b3_spi.h>
+#include <inc/driverlib/usci_b0_i2c.h>
+#include <inc/driverlib/usci_a0_uart.h>
 #include <inc/driverlib/wdt.h>
 #include <inc/driverlib/soft_i2c.h>
 #include <inc/driverlib/soft_spi.h>
+#include <inc/driverlib/clock_system_init.h>
 
 
 #endif /* INC_DRIVERLIB_DRIVERLIB_H_ */

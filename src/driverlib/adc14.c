@@ -95,7 +95,7 @@ void ADC14init(void)
 }
 
 // ADC14 interrupt service routine
-void ADC14_ISR(void)
+void ADC14_IRQHandler(void)
 {
 //******************************************************************************
 #ifdef sinple

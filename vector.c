@@ -9,38 +9,20 @@
 
 #include <inc/driverlib/usci_b3_spi.h>
 #include <inc/driverlib/usci_b0_i2c.h>
+#include <inc/driverlib/usci_a0_uart.h>
 #include <msp.h>
 //#include <inc/device/wdt.h>
-//#include <inc/device/usci_a1_spi.h>
-//#include <inc/device/usci_b1_spi.h>
-//#include <inc/device/usci_b0_i2c.h>
-//#include <inc/device/usci_b1_i2c.h>
+uint8_t RXData = 0;
+uint8_t TXData = 1;
 
-//#pragma vector=WDT_VECTOR
-//__interrupt void WDT_ISR(void)
-//{
-//    static unsigned long cnt = 0;
-//
-//    if (cnt++ > 20) {
-//        cnt = 0;
-//        __bic_SR_register_on_exit(LPM0_bits);
-//    }
-//}
-//
-//#pragma vector=USCI_A0_VECTOR
-//__interrupt void USCI_A0_ISR(void)
-//{
-//    switch (__even_in_range(UCA0IV, 4)) {
-//    case  0: break;                           // Vector  0: No interrupts
-//    case  2:                                  // Vector  2: RXIFG
-//        usci_a0_spi_rx_isr_handle();
-//        break;
-//    case  4:                                  // Vector  4: TXIFG
-//        usci_a0_spi_tx_isr_handle();
-//        break;
-//    default: break;
-//    }
-//}
+void EUSCIA0_IRQHandler(void)
+{
+    if (UCA0IFG & UCRXIFG)
+    {
+        UCA0IFG &=~ UCRXIFG;            // Clear interrupt
+        RXData = UCA0RXBUF;             // Clear buffer
+    }
+}
 /***********************************************************************************************/
 void EUSCIB3_IRQHandler(void)
 {
@@ -68,3 +50,30 @@ void EUSCIB0_IRQHandler(void)
 		usci_b0_i2c_tx_isr_handle();
 	}
 }
+/**********************************************************************************/
+//#pragma vector=WDT_VECTOR
+//__interrupt void WDT_ISR(void)
+//{
+//    static unsigned long cnt = 0;
+//
+//    if (cnt++ > 20) {
+//        cnt = 0;
+//        __bic_SR_register_on_exit(LPM0_bits);
+//    }
+//}
+//
+//#pragma vector=USCI_A0_VECTOR
+//__interrupt void USCI_A0_ISR(void)
+//{
+//    switch (__even_in_range(UCA0IV, 4)) {
+//    case  0: break;                           // Vector  0: No interrupts
+//    case  2:                                  // Vector  2: RXIFG
+//        usci_a0_spi_rx_isr_handle();
+//        break;
+//    case  4:                                  // Vector  4: TXIFG
+//        usci_a0_spi_tx_isr_handle();
+//        break;
+//    default: break;
+//    }
+//}
+// UART interrupt service routine

@@ -15,7 +15,6 @@ void user_init(void)
 {
 
 }
-
 void user_loop(void)
 {
 	 display();

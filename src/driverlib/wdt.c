@@ -16,10 +16,11 @@ void wdt_init(void)
 
 	// Configure GPIO
 	P1DIR |= BIT0;                          // Set P1.0 to output direction
-
-	SCB->SCR &= ~SCB_SCR_SLEEPONEXIT_Msk;           // Wake up after ISR
-	__enable_interrupt();
 	NVIC->ISER[0] = 1 << ((WDT_A_IRQn) & 31);
+
+	__enable_interrupt();
+	SCB->SCR &= ~SCB_SCR_SLEEPONEXIT_Msk;           // Wake up after ISR
+
 }
 void WDT_A_IRQHandler(void)
 {

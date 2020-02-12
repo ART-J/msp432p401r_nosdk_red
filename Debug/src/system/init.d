@@ -1,7 +1,7 @@
 # FIXED
 
 src/system/init.obj: ../src/system/init.c
-src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/ssd1351.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/driverlib.h
 src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/ADC14.h
 src/system/init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdint.h
 src/system/init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_stdint40.h
@@ -12,10 +12,18 @@ src/system/init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/incl
 src/system/init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/machine/_stdint.h
 src/system/init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/sys/_stdint.h
 src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b3_spi.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b0_i2c.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_a0_uart.h
 src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/wdt.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_i2c.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_spi.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/clock_system_init.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/devicelib.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/ssd1351.h
+src/system/init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/dac8571.h
 
 ../src/system/init.c: 
-C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/ssd1351.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/driverlib.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/ADC14.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdint.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_stdint40.h: 
@@ -26,4 +34,12 @@ C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/machine/_types.h:
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/machine/_stdint.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/sys/_stdint.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b3_spi.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b0_i2c.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_a0_uart.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/wdt.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_i2c.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_spi.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/clock_system_init.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/devicelib.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/ssd1351.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/devicelib/dac8571.h: 

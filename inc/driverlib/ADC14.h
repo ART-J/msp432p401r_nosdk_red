@@ -13,7 +13,7 @@
 #include "stdint.h"
 
 void ADC14init(void);
-extern  void ADC14_ISR(void);
+
 /************************************************/
 /*select differ sample or sinple sample*/
 #define   differ
