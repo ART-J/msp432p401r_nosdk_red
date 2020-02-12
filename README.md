@@ -80,5 +80,6 @@ V2.2
 	
 1.修改系统时钟配置，创建时钟初始化函数CSInit();不再在system_msp432p401r.c中配置
 MCLK=HSMCLK	=48 Mhz，SMCLK=12Mhz，ACLK=32Khz
+
 2.增加 UCSIA0为uart模式，回传ADC、算法计算等数据，方便记录（只实现单字节，复杂接口还未完成）
 
