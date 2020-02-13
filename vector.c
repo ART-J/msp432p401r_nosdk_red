@@ -3,7 +3,7 @@
  *
  *  Created on: 2016-10-26
  *      Author: Jack Chen <redchenjs@live.com>
- *  Fixed on :  2018-05-25 11:14
+ *  Fixed on :  2020-02-13 22:14
  *      Author: art-j <jjw903427521@gmail.com>
  */
 
@@ -17,11 +17,14 @@ uint8_t TXData = 1;
 
 void EUSCIA0_IRQHandler(void)
 {
-    if (UCA0IFG & UCRXIFG)
-    {
-        UCA0IFG &=~ UCRXIFG;            // Clear interrupt
-        RXData = UCA0RXBUF;             // Clear buffer
-    }
+    if (UCA0IFG & UCRXIFG) {
+        UCA0IFG &=~ UCRXIFG;
+        usci_a0_uart_rx_isr_handle();
+        }
+    if (UCA0IFG & UCTXIFG) {
+        UCA0IFG &=~ UCTXIFG;
+        usci_a0_uart_tx_isr_handle();
+        }
 }
 /***********************************************************************************************/
 void EUSCIB3_IRQHandler(void)

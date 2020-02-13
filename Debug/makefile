@@ -16,6 +16,7 @@ ORDERED_OBJS += \
 "./vector.obj" \
 "./src/devicelib/dac8571.obj" \
 "./src/devicelib/ssd1351.obj" \
+"./src/driverlib/IO_init.obj" \
 "./src/driverlib/adc14.obj" \
 "./src/driverlib/clock_system_init.obj" \
 "./src/driverlib/soft_i2c.obj" \
@@ -179,8 +180,8 @@ msp432p401r_nosdk_red.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" "vector.obj" "src\devicelib\dac8571.obj" "src\devicelib\ssd1351.obj" "src\driverlib\adc14.obj" "src\driverlib\clock_system_init.obj" "src\driverlib\soft_i2c.obj" "src\driverlib\soft_spi.obj" "src\driverlib\usci_a0_uart.obj" "src\driverlib\usci_b0_i2c.obj" "src\driverlib\usci_b3_spi.obj" "src\driverlib\wdt.obj" "src\system\fonts.obj" "src\system\init.obj" "src\system\user.obj" "src\user\display.obj" 
-	-$(RM) "main.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" "vector.d" "src\devicelib\dac8571.d" "src\devicelib\ssd1351.d" "src\driverlib\adc14.d" "src\driverlib\clock_system_init.d" "src\driverlib\soft_i2c.d" "src\driverlib\soft_spi.d" "src\driverlib\usci_a0_uart.d" "src\driverlib\usci_b0_i2c.d" "src\driverlib\usci_b3_spi.d" "src\driverlib\wdt.d" "src\system\fonts.d" "src\system\init.d" "src\system\user.d" "src\user\display.d" 
+	-$(RM) "main.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" "vector.obj" "src\devicelib\dac8571.obj" "src\devicelib\ssd1351.obj" "src\driverlib\IO_init.obj" "src\driverlib\adc14.obj" "src\driverlib\clock_system_init.obj" "src\driverlib\soft_i2c.obj" "src\driverlib\soft_spi.obj" "src\driverlib\usci_a0_uart.obj" "src\driverlib\usci_b0_i2c.obj" "src\driverlib\usci_b3_spi.obj" "src\driverlib\wdt.obj" "src\system\fonts.obj" "src\system\init.obj" "src\system\user.obj" "src\user\display.obj" 
+	-$(RM) "main.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" "vector.d" "src\devicelib\dac8571.d" "src\devicelib\ssd1351.d" "src\driverlib\IO_init.d" "src\driverlib\adc14.d" "src\driverlib\clock_system_init.d" "src\driverlib\soft_i2c.d" "src\driverlib\soft_spi.d" "src\driverlib\usci_a0_uart.d" "src\driverlib\usci_b0_i2c.d" "src\driverlib\usci_b3_spi.d" "src\driverlib\wdt.d" "src\system\fonts.d" "src\system\init.d" "src\system\user.d" "src\user\display.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

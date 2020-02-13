@@ -22,10 +22,16 @@ src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/in
 src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b3_spi.h
 src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b0_i2c.h
 src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_a0_uart.h
+src/driverlib/clock_system_init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h
+src/driverlib/clock_system_init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h
+src/driverlib/clock_system_init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h
+src/driverlib/clock_system_init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h
+src/driverlib/clock_system_init.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h
 src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/wdt.h
 src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_i2c.h
 src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_spi.h
 src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/clock_system_init.h
+src/driverlib/clock_system_init.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/IO_init.h
 
 ../src/driverlib/clock_system_init.c: 
 C:/ti/ccs930/ccs/ccs_base/arm/include/msp.h: 
@@ -49,7 +55,13 @@ C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/ADC14.h:
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b3_spi.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_b0_i2c.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_a0_uart.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/wdt.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_i2c.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/soft_spi.h: 
 C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/clock_system_init.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/IO_init.h: 

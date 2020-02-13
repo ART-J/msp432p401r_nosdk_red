@@ -17,6 +17,12 @@ src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/ccs_base/arm/include/CMSIS/core
 src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/ccs_base/arm/include/system_msp432p401r.h
+src/driverlib/usci_a0_uart.obj: C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_a0_uart.h
+src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h
+src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h
+src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h
+src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h
+src/driverlib/usci_a0_uart.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h
 
 ../src/driverlib/usci_a0_uart.c: 
 C:/ti/ccs930/ccs/ccs_base/arm/include/msp.h: 
@@ -35,3 +41,9 @@ C:/ti/ccs930/ccs/ccs_base/arm/include/CMSIS/core_cm4.h:
 C:/ti/ccs930/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h: 
 C:/ti/ccs930/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h: 
 C:/ti/ccs930/ccs/ccs_base/arm/include/system_msp432p401r.h: 
+C:/ti/workspace_v9/msp432p401r_nosdk_red/inc/driverlib/usci_a0_uart.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdio.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/_ti_config.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/linkage.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/stdarg.h: 
+C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/string.h: 

@@ -13,12 +13,14 @@
 
 void driver_init(void)
 {
+
     CSInit();
+    //io_init();
 	wdt_init();
+	usci_a0_uart_init();
 	usci_b3_spi_init();
 	//usci_b0_i2c_init();
 	//soft_i2c_init();
-	usci_a0_uart_init();
 	ADC14init();
 
 }

@@ -3,11 +3,39 @@
  *
  *  Created on: 2020年2月10日
  *      Author: 90342
+ *  Fixed on :  2020-02-13 22:14
+ *      Author: art-j <jjw903427521@gmail.com>
  */
+//   MSP432P401  - eUSCI_A0 UART echo at 9600 baud using SMCLK = 12MHz
+//
+//                MSP432P401
+//             -----------------
+//         /|\|                 |
+//          | |                 |
+//          --|RST              |
+//            |                 |
+//            |                 |
+//            |     P1.3/UCA0TXD|----> PC (echo)
+//            |     P1.2/UCA0RXD|<---- PC
+//            |                 |
+/*******************************************************************************/
 #include <msp.h>
+#include <inc/driverlib/usci_a0_uart.h>
 
 
+#define SIZE 32
 
+static unsigned char *uart_tx_buff = 0;
+static unsigned char uart_rx_buff[SIZE] = {0};
+
+static unsigned char uart_tx_num = 0;
+static unsigned char uart_rx_num = 0;
+
+//static unsigned char *uart_tx_buff;
+//static unsigned char *uart_rx_buff;
+
+//eUSCI_A0 UART echo at 9600 baud using SMCLK = 12MHz
+/*******************************************************************************/
 void usci_a0_uart_init(void)
 {
     //   Configure UART pins
@@ -33,62 +61,83 @@ void usci_a0_uart_init(void)
 
     //SCB->SCR &= ~SCB_SCR_SLEEPONEXIT_Msk;   // Wake up on exit from ISR
 }
-static unsigned char *uart_tx_buff;
-static unsigned char *uart_rx_buff;
-
-static unsigned char uart_tx_num = 0;
-static unsigned char uart_rx_num = 0;
-
-unsigned char usci_a0_uart_transmit_frame(unsigned char *p_buff, unsigned char num)
+/*******************************************************************************/
+//用于串口/ttl通信的芯片的UART函数
+/*******************************************************************************/
+//一个字符串
+unsigned char usci_a0_uart_transmit_frame(unsigned char *p_buff, unsigned char num) //
 {
-    //if (UCA0IFG&UCTXIFG) return 0;
+    if (num == 0) return 1;
+    if (UCA0STATW & UCBUSY) return 0;
     __disable_interrupt();
-
+    UCA0IE |= UCTXIE;
     __enable_interrupt();
     uart_tx_buff = p_buff;
-    uart_tx_num  = num;
-    UCA0TXBUF = *uart_tx_buff++;
-    while(!(UCA0IFG&UCTXIFG));
+    uart_tx_num  = num-1;
+    UCA0TXBUF = *uart_tx_buff;
+    while (UCA0STATW & UCBUSY);
     return 1;
 }
-
-unsigned char usci_a0_uart_receive_frame(unsigned char *p_buff, unsigned char num)
+unsigned char uart_a0_uart_receive_frame(unsigned char *p_buff, unsigned char num)
 {
-   // if (UCA0STAT & UCBUSY) return 0;
+    unsigned char cnt=0;
+    if (num == 0 || uart_rx_num == 0) return 0;
+    p_buff += uart_rx_num;
     __disable_interrupt();
-
+    do {
+        *--p_buff = uart_rx_buff[--uart_rx_num];
+        cnt++;
+    }while (uart_rx_num > 0);
+    uart_rx_num = 0;
     __enable_interrupt();
-    uart_rx_buff = p_buff;
-    uart_rx_num  = num;
-    UCA0TXBUF = 0xff;
-   // while (UCA0STAT & UCBUSY);
-    return 1;
+    return cnt;
+}
+/*******************************************************************************/
+//一个字符
+inline void usci_a0_uart_tx_isr_handle(void)
+{
+    if (uart_tx_num != 0) {
+        uart_tx_num--;
+        uart_tx_buff++;
+        UCA0TXBUF = *uart_tx_buff;
+    }
+    else {
+        UCA0IFG &=~UCTXIFG;
+        UCA0IE  &=~UCTXIE;
+    }
 }
 inline void usci_a0_uart_rx_isr_handle(void)
 {
-    *uart_rx_buff++ = UCA0RXBUF;
-    uart_rx_num--;
-    if (uart_rx_num) {
-        UCA0TXBUF = 0xff;
-    } else {
-        UCA0IFG &=~UCRXIFG;
-
+    if (uart_rx_num == SIZE) {
+        uart_rx_num = SIZE-1;
     }
+    uart_rx_buff[uart_rx_num++] = UCA0RXBUF;
 }
-
-inline void usci_a0_uart_tx_isr_handle(void)
+/*******************************************************************************/
+/* Standard Includes */
+//用于printf函数串口打印，可便于调试程序
+/*******************************************************************************/
+//一个字符
+int fputc(int _c, register FILE *_fp)
 {
-    UCA0RXBUF;
-    uart_tx_num--;
-    if (uart_tx_num) {
-        UCA0TXBUF = *uart_tx_buff++;
-    } else {
-        UCA0IFG &=~UCTXIFG;
+  while(!(UCA0IFG&UCTXIFG));
+  UCA0TXBUF = (unsigned char) _c;
 
-    }
+  return((unsigned char)_c);
 }
+//一个字符串
+int fputs(const char *_ptr, register FILE *_fp)
+{
+  unsigned int i, len;
 
+  len = strlen(_ptr);
 
-
+  for(i=0 ; i<len ; i++)
+  {
+    while(!(UCA0IFG&UCTXIFG));
+    UCA0TXBUF = (unsigned char) _ptr[i];
+  }
+  return len;
+}
 
 

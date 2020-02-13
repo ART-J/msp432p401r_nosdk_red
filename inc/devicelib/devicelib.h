@@ -12,5 +12,8 @@
 
 #include <inc/devicelib/ssd1351.h>
 #include <inc/devicelib/dac8571.h>
+#include <inc/system/fonts.h>
+#include <inc/system/init.h>
+#include <inc/system/user.h>
 
 #endif /* INC_DEVICELIB_DEVICELIB_H_ */

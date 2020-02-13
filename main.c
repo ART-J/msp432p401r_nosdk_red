@@ -45,7 +45,6 @@ int main(void)
     driver_init();
     device_init();
     //user_init();
-    LMP3;
     while (1) {
     if(systik_flag==1)
     {

@@ -18,6 +18,6 @@
 #include <inc/driverlib/soft_i2c.h>
 #include <inc/driverlib/soft_spi.h>
 #include <inc/driverlib/clock_system_init.h>
-
+#include <inc/driverlib/IO_init.h>
 
 #endif /* INC_DRIVERLIB_DRIVERLIB_H_ */
